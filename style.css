@@ -1,0 +1,805 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+        body {background-color:#fff;}
+
+        /* kasih style nav */
+        nav {
+            background: rgb(70, 196, 233);
+            background: linear-gradient(90deg, rgba(70, 196, 233, 1) 15%, rgba(74, 166, 196, 1) 36%, rgba(132, 46, 232, 1) 91%);
+            color: white;
+            border-bottom: 1px solid #E7E6E1;
+            display: flex;
+            margin: -8px -8px 0 -8px;
+            overflow: none;
+        }
+
+        /* countainer nya */
+        .nav-item h4 a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 21px;  
+        }
+        /* Lalu class navlink dan navitemnya*/
+        .nav-link {
+            display: block;
+            padding: 23px 20px;
+            margin: 0;
+            color: #f8feff;
+            text-decoration: none;
+            /* margin-left:100px ;  */
+            /* background-color: red; */
+        }
+        .nav-item {
+            position: relative;
+            margin-left:70px; 
+        }
+        /* end yg baru*/
+        /*tambahan, tambahin efek hover dan active, active artinya jika di navitem tadi ada class active(sedang berada dihalaman)
+maka stylenya bedain*/
+        #ilang {
+            color: #fff;
+        }
+        ilang:hover{
+           color: #fff; 
+        }
+        .nav-link:after {
+            content: "";
+            display: none;
+            height: 2px;
+            width: 100%;
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+        } 
+        .nav-link.active:after,
+        .nav-link:hover:after {
+            display: block;
+        }
+        /* style sidebar */
+        .sidebar {
+            height: 100vh;
+            width: 200px;
+            list-style: none;
+        }
+        .sidebar  a {
+            display: block;
+            padding:25px;
+            font-size: 14px;
+            text-decoration: none;
+            color: #fff;
+            width: 40%;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+            /* margin-top: 25px; */
+            margin-left: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .sidebar li {
+            margin-top: 55px;
+        }
+        /*navbar open*/
+        
+        .sidebar {
+            height: 100vh;
+            width: 200px;
+            list-style: none;
+            background: #373737;
+            /* tambahkan kode ini */
+            position: fixed;
+            left: -400px;
+            top: -18px;
+            transition: 0.7s;
+            opacity: 1;
+        }
+        /* tambahkan selector .sidebar-open di css  ini berguna untuk atur posisi open si side bar nya*/
+        
+        .sidebar-open {
+            left: 0;
+            /* backdrop-filter: blur(2px); */
+        }
+        /* Hamburger menu */
+        
+        .toggle-sidebar {
+            border: none;
+            font-weight: bold;
+            padding: 10px;
+            position: absolute;
+            /* right: 10px; */
+            left: 300px;
+            top: 12px;
+            cursor: pointer;
+            /* background-color: red; */
+        }
+        
+        .toggle-sidebar input {
+            position: absolute;
+            width: 48px;
+            height: 38px;
+            left: -5px;
+            top: -3px;
+            opacity: 0.0;
+            cursor: pointer;
+            z-index: 2;
+        }
+        
+        .toggle-sidebar span {
+            display: block;
+            width: 27px;
+            height: 3px;
+            background-color: #fff;
+            border-radius: 3px;
+            transition: all 0.2s;
+            margin-top: 4px;
+        }
+        /* hamburger menu animasi */
+        
+        #toggle-sidebar span:nth-child(2) {
+            transform-origin: 0 0;
+        }
+        
+        #toggle-sidebar span:nth-child(4) {
+            transform-origin: 0 100%;
+            background-color: #fff;
+        }
+        
+        #toggle-sidebar input:checked~span:nth-child(2) {
+            background-color: #fff;
+            transform: rotate( 45deg) translate( -1px, -2px);
+        }
+        
+        #toggle-sidebar input:checked~span:nth-child(4) {
+            background-color: #fff;
+            transform: rotate(-45deg) translate( -1px, 1px);
+        }
+        
+        #toggle-sidebar input:checked~span:nth-child(3) {
+            opacity: 0;
+            transform: scale(0);
+        }
+
+
+            /* media sosial */
+            li {
+                position: relative;
+                list-style: none;
+                width: 60px;
+                height: 60px;
+                margin: 0 30px;
+                transform: rotate(-30deg) skew(25deg);
+            }
+            
+            /* buat atur kotak nya */
+            li span {
+                position: absolute;
+                /* top: 100px;
+                left: 50px; */
+                width: 100%;
+                height:100%; 
+                transition: 0.5s;
+                display: flex !important;
+                font-size: 30px !important;
+                border-radius: 7px;
+            }
+            
+            li:nth-child(1) span {
+                background: #21B3DC;
+            
+            }
+            li:nth-child(2) span {
+                background: #55acee;
+            }
+            li:nth-child(3) span {
+                background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+                width: 70px;
+                height:63px;
+                border-radius: 10px;
+            }
+            li:nth-child(4) span {
+                background: #0077b5;
+            }
+            
+            li:hover span:nth-child(5) {
+                transform: translate(40px, -40px);
+                opacity: 1;
+            }
+             li:hover span:nth-child(4) {
+                transform: translate(30px, -30px);
+                opacity: 0.8;
+            }
+            li:hover span:nth-child(3) {
+                transform: translate(20px, -20px);
+                opacity: 0.6;
+            }
+            li:hover span:nth-child(2) {
+                transform: translate(10px, -10px);
+                opacity: 0.4;
+            }
+            li:hover span:nth-child(1) {
+                transform: translate(0px, 0px);
+                opacity: 0.2;
+            }
+            
+            .link li a{
+                list-style: none;
+                text-decoration: none;
+                color: skyblue;
+                font-size: 25px;
+                font-family: arial;
+                margin-left: 9px;
+                margin-top: 410px;
+            
+                /*background-color:red ;*/
+            }
+            
+            .link li a:hover{
+                 background-color: #1AA0E9;
+                 color: #fff;
+                display: block;
+                transition: 0.5s;
+                border-radius: 6px;
+            }
+
+
+           
+
+        .kotak2 h2 {
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 430px;
+        }
+        .kotak2 {
+            border-radius: 9px;
+            /* background-color: blue; */
+        }
+                                           
+ 
+
+
+        /* tambahin media query, buat ilangin element nav-link nya jika tampilan android */
+        /* android */
+        
+        @media only screen and (max-width: 380px) {
+            #ilang {
+                display: none;
+            }
+        }
+        /* kalo tampilan nya desktop, ilangin sidebar nya desktop */
+        
+        @media only screen and (min-width: 768px) {
+            .toggle-sidebar {
+                display: none;
+            }
+        }
+        /* ukuran tab */
+        
+        @media only screen and (min-width: 540px) {
+            .toggle-sidebar {
+                display: none;
+            }
+        }
+        /* ukuran ponsel S*/
+        @media only screen and (min-width: 320px) {
+           .mediasosial {
+             display: none;
+           }
+           .wadahmediasosial, .Alasnya, .Buat-ngatur, .kotak4 {
+            display: none;
+        }
+        .bg {
+            height: 65px;
+            width: 405px;
+        }
+        .bg h4 a {align-items: center;}
+        .bg h4 {
+            margin-left: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .kotak {
+            display: none;
+        }
+        .kotak2 {
+            width: 350px;
+            height: 370px;
+            margin-left: -5px;
+        }
+            .kotak2 h2 {
+                margin-left: 95px;
+                padding: 9px;
+                font-size: 47px;
+                margin-top: 90px;
+                font-size: 18px;
+                background: linear-gradient(27deg, rgba(68,153,173,1) 7%, rgba(66,80,213,1) 44%, rgba(107,32,207,1) 78%);
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: animasikata 5s infinite;
+            }
+            @keyframes animasikata {
+                0% {background-position: left;}
+                100% {background-position: right;}
+            }
+            .kotak2 p{
+                margin-left: 150px;
+                margin-top: 15px;
+                font-size: 16px;
+
+            }
+            .wrapper {
+                max-height: 160px;
+                border: 1px solid #ddd; 
+                display: flex;
+                overflow-x:auto;
+                margin-left: 20px;
+            }
+            .wrapper::-webkit-scrollbar{
+                width: 0;
+            }
+            .wrapper .item {
+                /* buat atur lebar kotak di dalam .wrapper */
+                min-width: 200px;
+                height: 120px;
+                margin-top: 10px;
+                margin-left: 5px;
+                line-height: 110px;
+                text-align: center;
+                background-color: rgb(69, 72, 76);
+                margin-right:70px ;
+            } 
+            nav {
+                width: 363px;
+            } 
+             .nav-item h4 a{ 
+               margin-left: 60px;
+               font-size:25px;
+           }
+           .nav-item{
+               margin-top: 20px;
+               
+           }
+            .toggle-sidebar{
+                margin-top: -4px;
+            } 
+            .countainer {
+                padding: 5px;
+                margin-left: 35px;
+            }
+              img {
+                width:310px;
+                height: 174px;
+                /* margin-left: -5px; */
+                border-radius: 6px;
+            }  
+            .countainer h4 {
+                text-align: center;
+                margin-right: -30px;
+                padding-top: 9px;
+                font-size: 18px;
+            }
+            .countainer h5 {
+                padding-top: 9px;
+                margin-left: 10px;
+                color: #7e7b7b;
+                font-size: 15px;
+            }
+            .countainer h2 {
+                font-size: 17px;
+            }
+            .countainer h3 {
+                margin-left: 20px;
+                font-size: 20px;
+            }
+            .countainer p {
+                margin-left:10px ;
+                font-family: "Poppins", sans-serif;
+                font-size: 15px;
+            }
+            .sidebar{
+                height: 1000vh;
+                width: 200px;
+            }
+            .sidebar a{
+                width: 100%;
+                align-items: center;
+                margin-top: 10px;
+            }
+          
+            .fotter {
+                margin-top: -13px;
+                margin-left: -8px;
+                width: 395px;
+                height: 100px;
+                background: linear-gradient(90deg, #12657c 0%, #000851 100%);
+            }
+            .fotter p {
+                font-family: 'Poppins', sans-serif;
+                color: #fff;
+                padding: 30px;
+                font-size:13px;
+                text-align: center;
+            }
+            .wrapper {
+                max-height: 160px;
+                border: 1px solid #ddd; 
+                display: flex;
+                overflow-x:auto;
+                margin-left: 20px;
+            }
+        }
+        /* Ukuran mobile M */
+        @media only screen and (min-width: 370px) {
+          /* meida sosial */
+          .wadahmediasosial, .Alasnya, .Buat-ngatur, .kotak4, .kotak, .mediasosial {
+            display: none;
+        }
+          .kotak2 {
+            width: 360px;
+            height: 350px;
+            margin-top: 90px;
+        }
+        .kotak2 h2 {
+            margin-left: 90px;
+            font-size: 17px;
+        }
+        .kotak2 p {
+            margin-left: 155px;
+        }
+        .wrapper {
+            width: 380px;
+        }
+        nav {
+            width: 399px;
+        }
+        .nav-item h4 a{
+            margin-left: 79px;
+        }
+        .toggle-sidebar {
+            margin-left:30px;
+        }
+        .countainer h4 {
+            width: 100%;
+            text-align: center;
+        }
+        .countainer {
+            padding-right: 10px;
+        }
+           .countainer h3 {
+             font-size: 18px;
+             margin-left: 6px;
+             text-align: center;
+             padding: 5px;
+             font-family: Arial, Helvetica, sans-serif;
+           }
+           .countainer h2 {
+               font-size: 16px;
+           }
+           .countainer h5 {
+               color: #7e7b7b;
+           }
+           .countainer img {
+               width: 360px;
+               height: 202px;
+               margin-left: -21px;
+           }
+           p {
+               font-size: 14px;
+           }
+           .fotter {
+               width: 400px;
+               height: 110px;
+               margin-left: -13px;
+               background: linear-gradient(90deg, #12657c 0%, #000851 100%);
+               /* display: block; */
+           }
+           .fotter p {
+               color: #fff;
+               padding: 30px;
+               margin-left: 30px;
+               text-align: center;
+           }
+           .kotak2 h2{padding-left: 40px;}
+           .kotak2 p{padding-left: 15px;}
+           .wrapper {
+            max-height: 160px;
+            border: 1px solid #ddd; 
+            display: flex;
+            overflow-x:auto;
+            margin-left: 15px;
+        }
+        
+           /* Tab*/
+           @media only screen and (min-width: 768px){
+            .wadahmediasosial, .Alasnya, .Buat-ngatur, .kotak4, .mediasosial {
+                display: none;
+            }
+            .bg {
+                height: 90px;
+                width: 1090px;
+            }
+            .nav-item{margin-top: 3px;}
+
+            .kotak {
+                display: none;
+            } 
+            .kotak2 {
+                width: 950px;
+                height: 370px;
+                margin-left: 35px;
+            }
+            .kotak2 h2 {
+                margin-left: 380px;
+                font-size: 23px;
+            }
+            .kotak2 p{
+                margin-left: 460px;
+                font-size: 20px;
+            }
+            .wrapper {
+            width: 959px;
+            margin-right:100px ;
+            }
+            nav {width: 1059px;}
+            .nav-item h4 a {
+                   font-size: 33px;
+                   margin-left: -35px;
+               }
+               .nav-item h4 {
+                   margin-top: 20px;
+               }
+               #ilang {
+                    font-size: 20px;
+                    margin-top: 5px;
+                    margin-right: -50px;
+               }
+               .countainer {width: 1030px;}
+               .countainer img {
+                   width: 550px;
+                   height: 300px;
+                   margin-left: 230px;
+               }
+               .countainer h4 {
+                   margin-top: 25px;
+                   font-size: 32px;
+                   text-align: center;
+                }
+               .countainer h3 {
+                   font-size: 30px;
+                   margin-left: 35px;
+               }
+               .countainer h2 {
+                   font-size: 30px;
+                   margin-left: 30px;
+               }
+               img {
+                   width: 798px;
+                   height: 449px;
+                   border-radius: 5px;
+                   margin-left: 100px;
+               }
+               .countainer h5 {
+                   font-size: 20px;
+                   margin-left:60px;
+                   padding-top: 50px;
+               }
+               .countainer h4 {
+                   font-size: 27px;
+                   padding-top: 10px;
+               }
+               .countainer img {
+                   margin-top: 19px;
+                   padding-left: 15px;
+               }
+               .countainer p {
+                    margin-left: 90px;
+                    width: 80%;
+                    font-size: 25px;
+               }
+               .kotak2 h2 {
+                   font-size: 29px;
+                   margin-left: 340px;
+               }
+               .kotak2 p{
+                   font-size: 25px;
+               }
+               .logo-slider h3 {
+                   font-size: 35px;
+               }
+               .fotter {
+                    margin-top: 100px;
+                    width: 1100px;
+                    height: 150px;
+               }
+               .fotter p{font-size: 19px;}
+           }
+    }
+    /* Ukuran Laptop */
+    @media only screen and (min-width: 1024px){  
+    .mediasosial{display: block;}
+    .wadahmediasosial, .Alasnya, .Buat-ngatur, .kotak4 {
+        display: block;
+    }
+    .bg {
+        width: 1418px;
+        height: 75px;
+    }
+    .kotak {
+        display: block;
+        width: 500px;
+        height: 500px;
+    }
+    .kotak2 {display: none;}
+    * {
+        padding: 0;
+        margin: 0;
+    }
+    .countainer img {
+        width: 560px;
+        height: 365px;
+        padding: 50px;
+        border-radius: 50px;
+        padding-left: 20px;
+    }
+    body {background-image: url(img/bck.png);} 
+    nav {height: 77px;}
+    
+    .nav-item h4 a {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 28px;
+        margin-left: -20px;
+        }
+        .nav-item h4 {
+            margin-top: 23px;
+        }
+        #ilang {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+            margin-left: 20px;
+            margin-top: 5px;
+        }
+        .countainer {
+            width: 1000px;
+            height: auto;
+            margin-left:15px;
+            background-color: #fff;
+            border-radius: 10px;
+            margin-top: -1px;
+        }
+        .countainer h4 {
+            font-size: 26px;
+            margin-top: 50px;
+            
+        }
+        .countainer h5 {
+            
+            margin-left: 39px;
+            font-size: 16px;
+            padding: 50px;
+        }
+        .countainer h3 {
+            font-size: 22px;
+        }
+        .countainer h2 {
+            font-size: 20px;
+        }
+        .countainer p {
+            font-family: 'Poppins', sans-serif;
+            /* font-family: Arial, Helvetica, sans-serif; */
+            font-size: 20px;
+            padding: 20px;
+        }
+        .kotak {
+            background-color: #fff;
+            width: 299px;
+            height: 500px;
+            border-radius: 5px;
+            margin-left: 1050px;
+            margin-top: -2370px;
+        } 
+        .kotak h1{
+            font-size: 17px;
+            padding: 10px;
+            margin-left: 20px;
+        }
+        .kotak h2 {
+            font-size: 20px;
+            margin-left: 15px;
+            padding: 10px;
+        }
+
+        /* Css nya kotak geser */
+        .Alasnya {
+            width: 1410px;
+            height:950px;
+            margin-top: 2090px;
+            background-color: #24252A;
+        }
+        .Buat-ngatur{
+            margin-top: -750px;
+        }
+        .Buat-ngatur h3 {
+            padding-left: 617px;
+            padding-top: 37px;
+            font-size: 28px;
+            background: linear-gradient(27deg, rgba(68,153,173,1) 7%, rgba(66,80,213,1) 44%, rgba(107,32,207,1) 78%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: animasikata 5s infinite;
+        }
+        .Alasnya h2 {
+            font-size: 24px;
+            color:#fff;
+            padding-left: 600px;
+            padding-top: 73px;
+        }
+
+        @keyframes animasikata {
+            0% {background-position: left;}
+            100% {background-position: right;}
+            
+        }
+        h1{
+            font-size: 30px;
+            font-weight: 500;
+            text-align: center;
+            position:relative;
+            margin-bottom: 60px;
+        }
+        h1:after{
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 4px;
+            background-color: #FF8159;
+            bottom: -20px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+        }
+        .logo-slider .item{
+            background-color: #fff;
+            box-shadow: 0 4px 5px #cacaca;
+            border-radius: 8px;
+            padding: 15px;
+            border: 2px solid #111;
+            width: 200px;
+            height: 200px;
+            margin-top: 50px;
+            list-style: none;
+        }
+        .logo-slider .slick-slide{
+            margin:15px;
+        
+        }
+        .slick-dots li.slick-active button:before{
+            color:#fff;
+        }
+        .sliick-dots li button:before{
+            font-size: 12px;
+        }
+        .slick-next:before,
+        .slick-prev:before{
+            color: #fff;
+            font-size: 24px;
+        }
+       
+
+        /* mediasosial */
+        .mediasosial {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 250px;
+        }  
+        /* buat atur kotak nya */
+        
+        .fotter {
+            background: linear-gradient(90deg, #12657c 0%, #000851 100%);
+            width: 1423px;
+            height: 145px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            margin-top: 59px;
+        }
+        .fotter p {
+            font-size: 17px;
+            margin-left: -35px;
+        }
+    }
